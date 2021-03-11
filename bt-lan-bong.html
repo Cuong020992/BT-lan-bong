@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT lăn bóng</title>
+
+    <style>
+        body{
+            height: 80vh;
+            border: 1px solid;
+            width: 80%;
+            position: relative;
+        }
+        #bong{
+            position: absolute;
+
+        }
+    </style>
+</head>
+<body >
+    <img id="bong" src="qua-bong.png" style="width: 10%" onmouseover="moveBall()"></img>
+</body>
+</html>
+<script>
+
+
+
+    let bong = document.getElementById('bong');
+
+    function moveBall(){
+        let height = screen.availHeight;
+        let  width = screen.availWidth;
+
+        let sides = Math.floor(Math.random()*4);
+        switch (sides)
+        {
+            case 0:
+                let currentLeft = bong.style.marginLeft ? bong.style.marginLeft : 0;
+                bong.style.marginLeft = (parseInt(currentLeft) + 100) + "px" ;
+                break;
+            case 1:
+                let currentRight = bong.style.marginRight ? bong.style.marginRight : 0;
+                bong.style.marginRight = (parseInt(currentRight) + 100) + "px" ;
+                break;
+            case 2:
+                let currentTop = bong.style.marginTop ? bong.style.marginTop : 0;
+                bong.style.marginTop = (parseInt(currentTop) + 100) + "px" ;
+                break;
+            case 3:
+                let currentBottom = bong.style.marginBottom ? bong.style.marginBottom : 0;
+                bong.style.marginBottom = (parseInt(currentBottom) + 100) + "px" ;
+
+                break;
+        }
+
+    }
+</script>
